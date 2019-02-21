@@ -17,11 +17,11 @@ spec:
           image: vmeoc/tito-fe:V1.9.4
           env:
           - name: TITO_VERSION
-            value: V2
+            value: V3
           - name: PROXY_NAME
-            value: waw2.com
+            value: waw3.com
           - name: PROXY_PORT
-            value: "2222"
+            value: "3333"
 
 
 ---
@@ -36,7 +36,7 @@ spec:
   ports:
   - name: http
     targetPort : 80    # port dans le container !! (INDISPENSABLE pour que cela fonctionne)
-    nodePort: 22222    # pour forcer le port expose par le service en externe (sinon alÃ©oire) (LB nord/sud)
+    nodePort: 33333    # pour forcer le port expose par le service en externe (sinon alÃ©oire) (LB nord/sud)
     port: 31180        # port interne pour le clusterIP (LB est/ouest)
   selector:
     app: tito-fe
